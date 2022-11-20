@@ -1,0 +1,49 @@
+Q: What are some of the most used sorting algorithms?
+
+Quicksort is the most used sorting algorithm. Other algorithms include merge sort, heapsort and insertion sort.
+
+Each have their own advantages and disadvantages.
+
+
+a) Quicksort is a divide and conquer algorithm.
+
+It is faster than merge sort and 2-3 times faster than heapsort.
+
+Quicksort selects a pivot element and then partitions the array into two parts, based on whether they are greater or lower than the pivot element.
+
+This is performed recursively for each partition until the entire array is sorted.
+
+It is in-place which means no auxilliary data structure/memory is required.
+
+Time complexity of quicksort is O(n log(n)) on average and O(n^2) at worst.
+
+
+
+b) Merge sort is also a divide and conquer algorithm. But is not in-place and requires memory.
+
+This algorithm breaks down an array into the smallest unit possible, then merges two units comparatively back together, continuing recursively
+    until the array is fully reconstructed.
+
+Time complexity of merge sort is O(n log(n)) on average and O(n log(n)) at worst. The space complexity of merge sort is O(n) and takes up a lot of
+    memory, which can slow the process down for large data sets.
+
+
+c) Heapsort is an algorithm similar to selection sort.
+
+This algorithm divides the array into two piles, sorted and unsorted, then extracts the largest element from the unsorted pile and adds it to the
+    sorted pile. Heapsort improves on selection sort by keeping the unsorted pile in a heap to find the largest element quicker.
+
+(A heap is just a binary tree sorted to place the min/max element as the root node, holding true recursively for all child nodes).
+
+Time complexity is O(n log(n)) on average and O(n log(n)) at worst. Operating on the heap (insertion, deletion including retrieval are both log(n)
+    whereas linear scanning with selection sort would be n - leading to O(n^2).
+
+
+d) Insertion sort simply iterates across the entire array swapping and comparing two elements together each iteration.
+
+The array iterates for each element in the array.
+
+The time complexity is O(n^2) however is very simple to execute and is useful for very small data sets or data sets that are almost already sorted,
+    with small dynamic changes in the array sorting required.
+
+In place therefore space complexity is O(1).
