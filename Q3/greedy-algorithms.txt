@@ -1,0 +1,100 @@
+Q: What are some examples of greedy algorithms?
+
+Greedy algorithms are used in the Travelling Salesman, Knapsack, job scheduling, Prim's, Kruskal's, Dijkstra's, Minimum Spanning Tree, Map coloring
+    in graphs, Vertex cover in graphs.
+
+By the way, a greedy algorithm is an algorithm that selects the best option available at the current moment. It does not take into account previous
+    decisions and therefore only continues forward. While greedy algorithms are generally faster, they can be non-optimal where dynamic algorithms
+        may be more suitable.
+
+
+a) Travelling Salesman Problem
+
+For a given number of nodes, we must traverse each node exactly once and return to origin node.
+
+The Nearest Neighbour Method is a greedy algorithm that solves for TSP.
+- We select the nearest node then continue for every unvisited node, until all nodes have been visited. Then return to first node.
+
+(This is not optimal and can fail, but simple)
+
+
+b) Knapsack Problem
+
+Given a number of items that have a 'weight' and 'value', and a maximum 'weight' limit, maximise the total value of items while staying under the
+    weight limit.
+
+ie. Fill your knapsack with the greatest value possible.
+
+Using a greedy approach, we calculate the value/weight ratio of each item, then select the item with the highest ratio while staying under the limit
+
+
+c) Job Scheduling Problem
+
+Given a number of jobs with different deadlines and different values (profit), schedule the jobs to maximise profit
+
+A greedy algorithm would sort the jobs by highest profit first. Each job is then scheduled and if the deadline has passed, try again with next job.
+
+d) Prim's Algorithm
+
+(Minimum Spanning Tree algorithm)
+
+We start with an arbitrary node of a graph, then select the edge with the lowest value.
+We then select the lowest value edge that has one end in an already used node, and the other end in an unused node.
+Continue until we have selected all nodes (or we have n-1 edges).
+
+Time complexity is O(E + V*log(V))
+
+Better for dense graph - lots of edges and low vertices (than Kruskal)
+
+e) Kruskal's Algorithm
+
+(Minimum Spanning Tree algorithm)
+
+Arrange all edges by ascending weight, then add each weight into a new graph while it doesn't violate MST properties.
+
+Time complexity is O(E*log(V))
+
+Better for sparse graph (than Prim)
+
+f) Dijkstra's Algorithm
+
+(Minimum Spanning Tree algorithm)
+
+Similar to Prim's.
+
+We start with an arbitrary node of a graph, then assign the neighbouring nodes their distance value.
+We then add the node to the new graph. We then select the node with the lowest distance value and add to graph.
+We then select that node and assign the neighbouring nodes their distance value. We then select the node with lowest distance...
+
+Time complexity is O(V^2)
+
+g) Minimum Spanning Tree
+
+A spanning tree a subgraph of a graph, which includes all vertices of the parent graph.
+
+A minimum spanning tree is the spanning tree of a graph that contains the minimum possible length (or sum of lengths of edges).
+
+The minimum spanning tree 
+
+h) Map coloring in graphs
+
+In a graph, colour the nodes so that no adjacent nodes have the same colour.
+The minimum number is called the chromatic number.
+
+Colour a vertex with colour-1.
+
+Pick an uncoloured vertex, then colour it with the lowest number colour that isn't on any adjacent vertex.
+  - If all colours appear on adjacent vertices, pick a new colour.
+Repeat until all vertices are coloured.
+
+i) Vertex cover in graphs
+
+// https://www.javatpoint.com/daa-approximation-algorithm-vertex-cover
+
+A vertex cover is a set of vertices that includes at least one endpoint of every edge of a graph.
+That means: Every vertex in the graph is touching at least one edge.
+
+Take an edge and put both vertices in a new graph. Remove all other edges connected to the new vertices.
+Repeat.
+
+// Is this greedy? Or simply naive?
